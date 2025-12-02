@@ -1,11 +1,10 @@
-# Stage 1: Build jar
-FROM maven:3.9.2-eclipse-temurin-17 AS build
-# Hoặc dùng maven:3.9.2-jdk-21 nếu tồn tại
-
+# Stage 1: Build jar với JDK 21
+FROM maven:3.9.2-jdk-21 AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
+
 
 # Stage 2: Run jar
 FROM eclipse-temurin:21-jdk
