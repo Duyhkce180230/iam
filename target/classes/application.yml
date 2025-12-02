@@ -1,0 +1,36 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /identity
+
+spring:
+  datasource:
+    url: jdbc:postgresql://labogroup4.postgres.database.azure.com:5432/Laboratory?sslmode=require
+    username: pgadmin
+    password: HKDuy@972422
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:duyhkce180230@fpt.edu.vn}
+    password: ${MAIL_PASSWORD:vigo albc rjpc bcyk}
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  signerKey: ${JWT_SIGNERKEY:KnUDO40L05IZIu314QpWuNeJ9pOL+zkebBfEDPYKK0vvUoie+oqwXN53MrffLMnX}
+  valid-duration: 1440 # in minutes
+  refreshable-duration: 1440  # in minutes
+  sliding-expiration-threshold: 15

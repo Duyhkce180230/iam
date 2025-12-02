@@ -1,0 +1,5 @@
+jwt:
+  signerKey: ${JWT_SIGNERKEY:KnUDO40L05IZIu314QpWuNeJ9pOL+zkebBfEDPYKK0vvUoie+oqwXN53MrffLMnX}
+  # Đặt 1 ngày = 1440 phút (vì code Java đang dùng MINUTES)
+  valid-duration: 1440
+  refreshable-duration: 4320
